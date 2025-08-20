@@ -7,7 +7,7 @@
 #define KC_NU KC_NO // available but not used
 
 // like an onion
-enum layers { BASE, NAVR, MOUR, NSL, FUNL };
+enum layers { BASE, NAVR, MOUR, NSL, FUNL, GAMEL, GAMEPLUSL };
 
 // Don't forget to edit the rules.mk and config.h accordingly
 #define COMBO_COUNT 16
@@ -85,12 +85,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_F12, KC_F7, KC_F8, KC_F9,  KC_PSCR, KC_NU,   KC_NU,   KC_MPRV, KC_MNXT, KC_NU,
     KC_F11, KC_F4, KC_F5, KC_F6,  KC_SLCT, KC_MSTP, KC_MPLY, KC_VOLD, KC_VOLU, KC_MUTE,
     KC_F10, KC_F1, KC_F2, KC_F3,  KC_PAUS, KC_ALGR, KC_LGUI, KC_LALT, KC_LSFT, KC_LCTL,
-                          KC_TAB, KC_ESC,  KC_NA,   KC_NA
+                          KC_TAB, KC_ESC,  KC_NA,   TG(GAMEL)
   ),
   [NSL] = LAYOUT_split_3x5_2(
     KC_LBRC, KC_7, KC_8,  KC_9, KC_RBRC, KC_NA,   KC_NA,   KC_NA,   ALGR(KC_LBRC), ALGR(KC_RBRC),
     KC_SCLN, KC_4, KC_5,  KC_6, KC_EQL,  KC_NA,   KC_NA,   KC_NA,   ALGR(KC_SCLN), ALGR(KC_QUOT),
     KC_GRV,  KC_1, KC_2,  KC_3, KC_BSLS, KC_ALGR, KC_LGUI, KC_LALT, KC_LSFT,       KC_LCTL,
                           KC_0, KC_MINS, KC_NA,   KC_NA
+  ),
+
+  [GAMEL] = LAYOUT_split_3x5_2(
+    KC_TAB,  KC_Q, KC_W, KC_E,                  KC_R,    KC_T,             KC_Y,            KC_U, KC_I,    KC_O,
+    KC_LSFT, KC_A, KC_S, KC_D,                  KC_F,    KC_G,             KC_H,            KC_J, KC_K,    KC_L,
+    KC_LCTL, KC_Z, KC_X, KC_C,                  KC_V,    KC_B,             KC_N,            KC_M, KC_COMM, KC_DOT,
+                         LT(GAMEPLUSL, KC_SPC), KC_LALT, LT(FUNL, KC_ENT), LT(NSL, KC_BSPC)
+  ),
+  [GAMEPLUSL] = LAYOUT_split_3x5_2(
+    KC_ESC,  KC_TRNS, KC_TRNS, KC_TRNS, KC_6,    KC_PGUP,          KC_EQL,          KC_GRV,  KC_P,   KC_QUOT,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_5,    KC_HOME,          KC_MINS,         KC_SCLN, KC_L,   KC_BSLS,
+    KC_TRNS, KC_1,    KC_2,    KC_3,    KC_4,    KC_PGDN,          KC_RBRC,         KC_LBRC, KC_DOT, KC_SLSH,
+                               KC_NA,   KC_LALT, LT(FUNL, KC_ENT), LT(NSL, KC_BSPC)
   )
 };
