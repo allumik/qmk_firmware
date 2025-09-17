@@ -62,7 +62,7 @@ combo_t key_combos[COMBO_COUNT] = {
   [ALGR_R]  = COMBO(lalgr_right_combo,  KC_ALGR),
 
   [TAB] = COMBO(tab_combo, KC_TAB),
-  [DEL] = COMBO(del_combo, KC_DEL),
+  [DEL] = COMBO(del_combo, KC_BSPC),
 
   // activate the GAME MODE!!! WOOW
   [GAMEM] = COMBO(game_mode, DF(_GAMEL)),
@@ -73,7 +73,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_Q,         KC_W,         KC_F, KC_P,              KC_B,              KC_J,              KC_L,            KC_U,    KC_Y,           KC_QUOT,
     KC_A,         KC_R,         KC_S, KC_T,              KC_G,              KC_M,              KC_N,            KC_E,    KC_I,           KC_O,
     LCTL_T(KC_Z), LSFT_T(KC_X), KC_C, KC_D,              KC_V,              KC_K,              KC_H,            KC_COMM, LSFT_T(KC_DOT), LCTL_T(KC_SLSH),
-                                      LT(_NAVR, KC_SPC), LT(_MOUR, KC_ESC), LT(_FUNL, KC_ENT), LT(_NSL, KC_BSPC)
+                                      LT(_NAVR, KC_SPC), LT(_MOUR, KC_ESC), LT(_FUNL, KC_ENT), LT(_NSL, KC_DEL)
   ),
 
   [_NAVR] = LAYOUT_split_3x5_2(
@@ -89,8 +89,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                 KC_NA,   KC_NA,   KC_BTN1, KC_BTN2
   ),
   [_FUNL] = LAYOUT_split_3x5_2(
-    KC_F12, KC_F7, KC_F8, KC_F9,  KC_PSCR, KC_NU,   KC_NU,   KC_MPRV, KC_MNXT, CM_TOGG,
-    KC_F11, KC_F4, KC_F5, KC_F6,  KC_SLCT, KC_MSTP, KC_MPLY, KC_VOLD, KC_VOLU, KC_MUTE,
+    KC_F12, KC_F7, KC_F8, KC_F9,  KC_PSCR, KC_NA,   KC_MUTE, KC_MSTP, KC_MPLY, CM_TOGG,
+    KC_F11, KC_F4, KC_F5, KC_F6,  KC_SLCT, KC_NA,   KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT,
     KC_F10, KC_F1, KC_F2, KC_F3,  KC_PAUS, KC_ALGR, KC_LGUI, KC_LALT, KC_LSFT, KC_LCTL,
                           KC_TAB, KC_ESC,  KC_NA,   KC_NA
   ),
